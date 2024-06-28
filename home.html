@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Box Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Storage Box Dashboard
+    </div>
+    <div class="content">
+        <div class="button-container">
+            <button onclick="showBoxInfo(1)">Storage Box 1</button>
+            <button onclick="showBoxInfo(2)">Storage Box 2</button>
+            <button onclick="showBoxInfo(3)">Storage Box 3</button>
+            <button onclick="showBoxInfo(4)">Storage Box 4</button>
+            <button onclick="showBoxInfo(5)">Storage Box 5</button>
+        </div>
+        <div class="card" id="box-info">
+            <h3>Storage Box Information</h3>
+            <img src="https://via.placeholder.com/400x200" alt="Storage Box Image" id="box-image">
+            <p id="box-location">Select a storage box to view its location.</p>
+        </div>
+    </div>
+    <script>
+        function showBoxInfo(boxNumber) {
+            const boxInfo = {
+                1: {
+                    image: 'https://via.placeholder.com/400x200?text=Storage+Box+1',
+                    location: 'Location: Warehouse A, Section 1'
+                },
+                2: {
+                    image: 'https://via.placeholder.com/400x200?text=Storage+Box+2',
+                    location: 'Location: Warehouse B, Section 2'
+                },
+                3: {
+                    image: 'https://via.placeholder.com/400x200?text=Storage+Box+3',
+                    location: 'Location: Warehouse C, Section 3'
+                },
+                4: {
+                    image: 'https://via.placeholder.com/400x200?text=Storage+Box+4',
+                    location: 'Location: Warehouse D, Section 4'
+                },
+                5: {
+                    image: 'https://via.placeholder.com/400x200?text=Storage+Box+5',
+                    location: 'Location: Warehouse E, Section 5'
+                },
+            };
+
+            const box = boxInfo[boxNumber];
+            document.getElementById('box-image').src = box.image;
+            document.getElementById('box-location').textContent = box.location;
+        }
+    </script>
+</body>
+</html>
